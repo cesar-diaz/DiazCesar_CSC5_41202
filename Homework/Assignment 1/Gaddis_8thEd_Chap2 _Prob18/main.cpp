@@ -19,12 +19,14 @@ const char cnvPerc = 100; //conversion to percentage
 int main(int argc, char** argv) {
 
     //declare or initialize variables
+    
     unsigned short cstSrvy = 16500; //customers surveyed 
     unsigned char peDrnk = 15; //percentage surveyed energy drinkers, 1+ per week
     unsigned char pcDrnk = 58; //percentage surveyed energy citrus drinkers
     unsigned short neDrnk, ncDrnk; //number of energy and citrus drinkers
     
     //calculate the number of drinkers
+    
     neDrnk = cstSrvy * peDrnk / cnvPerc;
     ncDrnk = neDrnk * pcDrnk / cnvPerc;
     
