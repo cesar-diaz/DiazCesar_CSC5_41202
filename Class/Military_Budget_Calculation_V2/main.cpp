@@ -1,7 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: rcc
- *
+ * Author: Cesar Diaz
  * Created on January 6, 2016, 8:13 AM
  */
 
