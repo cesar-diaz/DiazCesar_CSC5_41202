@@ -1,6 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: Cesar
+ * Author: Cesar Diaz
  *
  * Created on January 6, 2016, 8:35 AM
  */
