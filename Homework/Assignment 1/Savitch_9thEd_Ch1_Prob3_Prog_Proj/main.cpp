@@ -1,7 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: rcc
- *
+ * Author: Cesar Diaz
  * Created on January 6, 2016, 10:44 AM
  */
 
@@ -19,7 +18,7 @@ const char cnvPnDl = 100; //conversion from pennies to dollars
 int main(int argc, char** argv) {
     
     unsigned char nQrtrs,nNkls,nDimes; //declare inputs, number of Q,D,N
-    unsigned short total ; //total
+    unsigned short total; //total
     
     //input the number of coins
 
