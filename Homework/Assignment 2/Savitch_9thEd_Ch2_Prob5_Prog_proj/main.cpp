@@ -2,6 +2,8 @@
  * File:   main.cpp
  * Author: Cesar Diaz
  * Created on January 14, 2016, 8:32 AM
+ * Purpose: Determine whether or not it is safe to hold a meeting in a room with 
+ * a certain capacity and a certain amount of people attending the meeting
  */
 
 #include <iostream>

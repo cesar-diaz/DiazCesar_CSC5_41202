@@ -2,6 +2,7 @@
  * File:   main.cpp
  * Author: Cesar Diaz
  * Created on January 14, 2016, 9:10 AM
+ * Purpose: Calculate amount withheld from check after taxes and other expenses 
  */
 
 

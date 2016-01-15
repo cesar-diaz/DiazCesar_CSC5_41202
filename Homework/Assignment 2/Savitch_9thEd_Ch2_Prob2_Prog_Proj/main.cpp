@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
- * Author: rcc
- *
+ * Author: Cesar Diaz
  * Created on January 14, 2016, 8:04 AM
+ * Purpose: Find money owed to employees on 6 months of pay increase
  */
 
 #include <iostream>

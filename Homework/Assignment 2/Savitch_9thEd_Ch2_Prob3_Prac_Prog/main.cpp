@@ -8,7 +8,8 @@
  * File:   main.cpp
  * Author: Cesar Diaz
  * Created on January 12, 2016, 9:44 PM
- * Purpose: 
+ * Purpose: How many minutes and seconds would it take to run a mile going at 
+ * an input speed
  */
 
 #include <iostream>

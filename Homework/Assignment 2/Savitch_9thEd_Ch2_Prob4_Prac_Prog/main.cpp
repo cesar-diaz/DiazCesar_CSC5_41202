@@ -2,6 +2,7 @@
  * File:   main.cpp
  * Author: Cesar Diaz
  * Created on January 13, 2016, 1:13 PM
+ * Purpose: Game of mad libs
  */
 
 #include <iostream>

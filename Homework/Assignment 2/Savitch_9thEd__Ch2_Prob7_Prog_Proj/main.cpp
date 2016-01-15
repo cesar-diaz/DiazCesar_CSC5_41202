@@ -2,7 +2,7 @@
  * File:   main.cpp
  * Author: Cesar Diaz
  * Created on January 14, 2016, 10:08 AM
- * Purpose: Check Out IDE
+ * Purpose: Calculates the cost of something in the future with added inflation
  */
 
 

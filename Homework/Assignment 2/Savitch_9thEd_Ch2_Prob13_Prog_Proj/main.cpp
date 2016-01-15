@@ -2,6 +2,8 @@
  * File:   main.cpp
  * Author: Cesar Diaz
  * Created on January 14, 2016, 3:46 PM
+ * Purpose: Find how many candy bars one would have to eat to maintain weight.
+ * Differnt for male and female
  */
 
 

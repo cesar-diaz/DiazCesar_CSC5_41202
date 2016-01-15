@@ -2,7 +2,7 @@
  * File:   main.cpp
  * Author: Cesar Diaz
  * Created on January 13, 2016, 1:52 PM
- * Purpose: Babylonian method
+ * Purpose: Babylonian method to find square root
  */
 
 #include <iostream>

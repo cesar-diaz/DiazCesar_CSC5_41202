@@ -8,7 +8,7 @@
  * File:   main.cpp
  * Author: Cesar Diaz
  * Created on January 12, 2016, 6:59 PM
- * Purpose: 
+ * Purpose: How many cereal boxes would it take to get a ton
  */
 
 #include <iostream>

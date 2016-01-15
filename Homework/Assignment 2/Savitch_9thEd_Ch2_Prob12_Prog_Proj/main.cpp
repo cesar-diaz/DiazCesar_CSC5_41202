@@ -7,8 +7,8 @@
 /* 
  * File:   main.cpp
  * Author: Cesar Diaz
- *
  * Created on January 14, 2016, 2:43 PM
+ * Purpose: How many gallons of water are inside a cylindrical well
  */
 
 #include <iostream>
@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
                 << rad << " inches for the\n";
         cout << "casing holds about " << galInWl << " gallons of water "
                 "not enough for a family of four and you\n";
-        cout << "may need to install a seperate holding tank "
+        cout << "may need to install a separate holding tank "
                 "that can hold at least " << galNeed << " gallons more.\n";
     }
 
