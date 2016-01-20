@@ -29,15 +29,14 @@ int main(int argc, char** argv) {
     unsigned short nSolutn;     //Problem solution to display
     bool reDspl = true;         //Exit program when false
     
-   
-    
     //Menu to Display Solution
     do{
+        
          //Input problem to display, i.e. menu
         cout << "Assignment 3 Problem Set\n";
-        cout << "Type 1 to Display Problem Savitch 8thEd Chap3 Prob10\n";
-        cout << "Type 2 to Display Problem Savitch 8thEd Chap3 Prob11\n";
-        cout << "Type 3 to Display Problem Savitch 9thEd Chap 3 Prob1\n";
+        cout << "Type 1 to Display Problem Savitch 8th Ed Chap 3 Prob 10\n";
+        cout << "Type 2 to Display Problem Savitch 8th Ed Chap 3 Prob 11\n";
+        cout << "Type 3 to Display Problem Savitch 9th Ed Chap 3 Prob 1\n";
         cout << "Type anything else to exit\n";
         cin >> nSolutn;
         
@@ -46,7 +45,7 @@ int main(int argc, char** argv) {
             case 1:{
                 
                 //The Problem to Solve
-                cout << endl << "Solution to Savitch 8thEd Chap3 Prob10\n";
+                cout << endl << "Solution to Savitch 8th Ed Chap 3 Prob 10\n";
                 cout << endl << "The Fibonacci Sequence\n" << endl;
 
                 //Declare Variables
@@ -90,7 +89,7 @@ int main(int argc, char** argv) {
                 break;
             }
             case 2:{
-                cout << endl << "Solution to Savitch 8thEd Chap3 Prob11\n";
+                cout << endl << "Solution to Savitch 8th Ed Chap 3 Prob 11\n";
                 cout << endl << "The Finite sum for e^x\n" << endl;
 
                 //Declare and initialize variables for e^x
@@ -103,6 +102,7 @@ int main(int argc, char** argv) {
 
                 //Calculate e^x
                 for (int n = 1; n <= N_TERMS; n++){
+                    
                     //Declare and initialize variables
                     unsigned int factN = 1;//N and N factorial
 
@@ -122,7 +122,7 @@ int main(int argc, char** argv) {
                 break;
             }
             case 3:{
-                cout << endl << "Solution to Savitch 9thEd Chap 3 Prob1.\n";
+                cout << endl << "Solution to Savitch 9th Ed Chap 3 Prob 1.\n";
                 cout << endl << "The Rock-Paper-Scissors Game.\n" << endl;
 
                 //Set the random number seed
