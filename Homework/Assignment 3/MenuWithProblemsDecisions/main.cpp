@@ -17,7 +17,8 @@ using namespace std;
 
 //User Libraries 
 
-//Global Libraries 
+//Global Constants
+const float PI=4*atan(1);
 
 //Function Prototypes 
 
@@ -37,6 +38,9 @@ int main(int argc, char** argv) {
         cout << "Type 1 to Display Problem Savitch 8th Ed Chap 3 Prob 10\n";
         cout << "Type 2 to Display Problem Savitch 8th Ed Chap 3 Prob 11\n";
         cout << "Type 3 to Display Problem Savitch 9th Ed Chap 3 Prob 1\n";
+        cout << "Type 4 to Display Problem Savitch 9th Ed Chap 3 Prob 5\n";
+        cout << "Type 5 to Display Problem Savitch 9th Ed Chap 3 Prob 8\n";
+        cout << "Type 6 to Display Problem Savitch 9th Ed Chap 3 Prob 6\n";
         cout << "Type anything else to exit\n";
         cin >> nSolutn;
         
@@ -173,12 +177,93 @@ int main(int argc, char** argv) {
                 break;
             }
             case 4:{
+                
+            //The Problem to Solve
+            cout << endl << "Solution to Savitch 9th Ed Chap 3 Prob 5 "
+                    "Practice Programs\n";
+            cout << endl << "Prime numbers from 3-100\n" << endl;
+
+            //Declare and initialize variables
+            int num, i, count, n = 100;
+
+            //Output or calculate the output required	
+            for(num = 3; num <= n; num++){
+                 count = 0;
+                 for(i = 2; i <= num / 2; i++){
+                     if(num % i == 0){
+                         count++;
+                         break;
+                     }
+                }
+                 if(count == 0 && num != 1)
+                      cout << setw(3) << num;
+            }
+            cout << endl << endl;
                 break;
             }
             case 5:{
+            //The problem to solve
+            cout << endl << "Solution to Savitch 9thEd Chap3 Prob8" << endl;
+            cout << endl << "The finite sum for PI" << endl << endl;
+
+            //Declare and initialize variables for apprxPI
+            float apprxPI = 1;    //Approximate value of PI to start
+            unsigned int nTerms;//Number of terms to limit sum of PI
+            char sign = -1;       //Alternating sign of the PI sequence
+
+            //Input the number of terms in the sequence
+            cout << "Input number of Terms to approximate PI"<< endl;
+            cin >> nTerms;
+
+            //Approximate PI/4
+            for(int i=2, j=3; i<=nTerms; i++, j+=2){
+                apprxPI += (sign / static_cast<float>(j));
+                sign *= -1;
+            }
+            apprxPI *= 4;//Multiply by 4 once to approximate PI
+
+            //Output the results
+            cout<< "The exact  value of PI = " << PI << endl;
+            cout<< "The number of terms it took to approx PI = " << nTerms << endl;
+            cout<< "The approx value of PI = " << apprxPI << endl << endl;
                 break;
             }
             case 6:{
+                
+            //The Problem to Solve
+            cout << endl << "Solution to Savitch 9th Ed Chap 3 Prob 6\n";
+            cout << endl << "Buoyancy of a sphere.\n" << endl;
+
+            //Find the volume of the sphere
+            int rad;
+            int wtOfSph;
+            float volume;
+            float totVolu;
+
+            //Input radius and weight of the sphere
+            cout << fixed << setprecision(2);
+            cout << "Enter the radius of your sphere in feet?\n";
+            cin >> rad;
+            cout << "What is the weight of the sphere in lbs?\n";
+            cin >> wtOfSph;
+            volume = (4/3.0) * PI * pow(rad,3);
+            cout << "The volume of your sphere is " << volume << endl;
+
+            //Find the buoyant force
+            float force;
+            float wtOfWtr = 62.4f;
+
+            force =  volume * wtOfWtr;
+            cout << "The buoyant force of the sphere = " << force << endl;
+
+            //Calculate and output the results
+            if (force >= wtOfSph){
+                cout << "This sphere should float on water.\n";
+                cout << endl;
+            }else{
+                cout << "This sphere is too heavy to float on water.\n";
+                cout << endl;
+            }
                 break;
             }
             case 7:{

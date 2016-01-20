@@ -1,13 +1,14 @@
 /* 
- * File:   main.cpp
- * Author: Cesar Diaz
- * Created on January 4, 2016, 10:18 AM
- * Purpose: Check Out IDE
+    File:   main.cpp
+    Author: Cesar Diaz
+    Created on January 4, 2016, 10:18 AM
+    Purpose: Check Out IDE
  */
 
 
 //system libraries
 #include <iostream>
+
 using namespace std;
 
 //User Libraries 
@@ -27,7 +28,6 @@ int main(int argc, char** argv) {
     //Calculate or map inputs to outputs
     
     //Output the results
-    cout << "Hello World" <<endl;
     
     //Exit stage right
 
