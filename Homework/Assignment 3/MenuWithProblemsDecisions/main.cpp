@@ -10,6 +10,8 @@
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+#include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
@@ -35,7 +37,7 @@ int main(int argc, char** argv) {
         cout << "Assignment 3 Problem Set\n";
         cout << "Type 1 to Display Problem Savitch 8thEd Chap3 Prob10\n";
         cout << "Type 2 to Display Problem Savitch 8thEd Chap3 Prob11\n";
-        cout << "Type 3 to Display Problem 3\n";
+        cout << "Type 3 to Display Problem Savitch 9thEd Chap 3 Prob1\n";
         cout << "Type anything else to exit\n";
         cin >> nSolutn;
         
@@ -120,7 +122,75 @@ int main(int argc, char** argv) {
                 break;
             }
             case 3:{
-                cout << endl << "Solution to Problem 3\n" << endl;
+                cout << endl << "Solution to Savitch 9thEd Chap 3 Prob1.\n";
+                cout << endl << "The Rock-Paper-Scissors Game.\n" << endl;
+
+                //Set the random number seed
+                srand (static_cast<unsigned int>(time(0)));
+                char questn;//Question, does player want to keep playing
+
+                //Loop until player wants to quit
+                do{
+
+                    //Declare and initialize variables
+                    char computr;//The computers play
+                    char player;//The players move
+
+                    //Input the players move
+                    do{
+                        cout << endl << "What is your move R,P,S?\n";
+                        cin >> player;
+                        player = toupper (player);
+                    }while(!(player == 'P' || player == 'R' || player == 'S'));
+
+                    //Computer generated play
+                    do{
+                        computr = rand() % 4 + 80;
+                    }while (computr == 'Q');
+
+                    //Output the moves by the computer and player
+                    cout << "The computer played " << computr << endl;
+                    cout << "The Players move " << player << endl;
+
+                    //Determine the result
+                    if (computr == player){
+                        cout << "The result is tie.\n";
+                    }else if (player == 'P' && computr == 'R'){
+                        cout << "The player wins!\n";
+                    }else if (player == 'R' && computr == 'S'){
+                        cout << "The player wins!\n";
+                    }else if (player == 'S' && computr == 'P'){
+                        cout << "The player wins!\n";
+                    }else{
+                        cout << "The player loses!\n";
+                    }
+
+                    //Keep Playing?
+                    cout << endl << "Do you want to continue playing?\n";
+                    cin >> questn;
+                    cout << endl;
+                }while (toupper(questn) == 'Y');
+                break;
+            }
+            case 4:{
+                break;
+            }
+            case 5:{
+                break;
+            }
+            case 6:{
+                break;
+            }
+            case 7:{
+                break;
+            }
+            case 8:{
+                break;
+            }
+            case 9:{
+                break;
+            }
+            case 10:{
                 break;
             }
             default:{

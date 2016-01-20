@@ -1,50 +1,52 @@
 /* 
- * File:   main.cpp
- * Author: Cesar Diaz
- * Created on January 19, 2016, 10:40 AM
- * Purpose: Calculate e^x in one line
+    File:   main.cpp
+    Author: Cesar Diaz
+    Created on January 19, 2016, 10:42 PM
+    Purpose:  Calculate PI
  */
 
-
-//system libraries
+//System Libraries
 #include <iostream>
 #include <iomanip>
 #include <cmath>
+
 using namespace std;
 
-//User Libraries 
+//User Libraries
 
-//Global Libraries 
+//Global Constants
+const float PI=4*atan(1);
 
-//Function Prototypes 
+//Function prototypes
 
 //Execution Begins Here
-
 int main(int argc, char** argv) {
     
-    cout << endl << "Solution to Savitch 8thEd Chap3 Prob11\n";
-    cout << endl << "The Finite sum for e^x\n" << endl;
+    //The problem to solve
+    cout << endl << "Solution to Savitch 9thEd Chap3 Prob8" << endl;
+    cout << endl << "The finite sum for PI" << endl << endl;
     
-    //Declare and initialize variables for e^x
-    const unsigned char N_TERMS = 13;
-    float tol = 1e-6f, term = 1, etox = 1, x;//e^x
-    float nTerm; // Counter to determine how many terms
+    //Declare and initialize variables for apprxPI
+    float apprxPI = 1;    //Approximate value of PI to start
+    unsigned int nTerms;//Number of terms to limit sum of PI
+    char sign = -1;       //Alternating sign of the PI sequence
     
-    //Input the value x
-    cout << "Input x of e^x computation\n";
-    cin >> x;
+    //Input the number of terms in the sequence
+    cout << "Input number of Terms to approximate PI"<< endl;
+    cin >> nTerms;
     
-    //Calculate e^x
-    for (nTerm = 1; term > tol; term*= x / nTerm++, etox += term);
- 
+    //Approximate PI/4
+    for(int i=2, j=3; i<=nTerms; i++, j+=2){
+        apprxPI += (sign / static_cast<float>(j));
+        sign *= -1;
+    }
+    apprxPI *= 4;//Multiply by 4 once to approximate PI
+    
     //Output the results
-    cout << "The exact value of e^" << x << " = " << exp(x) << endl;
-    cout << "The number of trerms it took to approx e^" << x << " = "
-            << nTerm << endl;
-    cout << "The approx value of e^" << x << " = " << etox << endl << endl;
+    cout<< "The exact  value of PI = " << PI << endl;
+    cout<< "The number of terms it took to approx PI = " << nTerms << endl;
+    cout<< "The approx value of PI = " << apprxPI << endl << endl;
     
     //Exit stage right
-
     return 0;
 }
-
