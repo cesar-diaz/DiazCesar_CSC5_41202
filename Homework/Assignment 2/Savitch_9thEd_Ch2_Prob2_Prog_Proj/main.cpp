@@ -16,13 +16,13 @@ int main(int argc, char** argv) {
     
     cout << fixed << setprecision(2);
     
-    const double payInc = 7.6 * .01;
+    const float payInc = 7.6 * .01;
     unsigned int salary;
     
     cout << "Enter your salary.\n";
     cin >> salary;
     salary = salary / 12;
-    double monOwe = (salary * payInc) * 6;
+    float monOwe = (salary * payInc) * 6;
     cout << "The money owed to you is " << monOwe << ".\n";
     cout << "Your new annual salary is " << (salary * 12) + monOwe << ".\n";
     cout << "Your new monthly salary is " << salary + (monOwe / 6);

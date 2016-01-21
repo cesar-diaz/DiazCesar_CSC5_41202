@@ -19,7 +19,7 @@ const double TON_OZ = 35273.92;
 
 int main(int argc, char** argv) {
     
-    double boxWght;
+    float boxWght;
     unsigned short tries;
     cout << "How many times would you like to run this program?\n";
     cin >> tries;

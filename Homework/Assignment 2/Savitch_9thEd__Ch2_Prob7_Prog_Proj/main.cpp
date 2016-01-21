@@ -18,10 +18,10 @@ using namespace std;
 int main(int argc, char** argv) {
     
     //Declare and initialize variables
-    double costNow;
+    float costNow;
     unsigned short years;
-    double inflate;
-    double costFut;
+    float inflate;
+    float costFut;
     
     //Input data
     cout << "Enter the price of the item that you want to purchase.\n";

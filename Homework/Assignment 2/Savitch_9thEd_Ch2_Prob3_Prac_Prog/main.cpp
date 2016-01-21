@@ -20,7 +20,7 @@ const short SEC_PER_HR = 3600;//Number of seconds in an hour
   
 int main(int argc, char** argv) {
     
-    double miles;//Used double so that the input for miles can be decimals
+    float miles;//Used double so that the input for miles can be decimals
     //Prompt the user to enter the desired MPH
     cout << "Enter the number of miles you would like to run in an hour\n";
     cin >> miles;

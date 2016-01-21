@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
     unsigned height;
     unsigned short years;
     char gender;
-    double bmr;
+    float bmr;
     
     //Input data
     cout << "Enter your weight in pounds.\n";

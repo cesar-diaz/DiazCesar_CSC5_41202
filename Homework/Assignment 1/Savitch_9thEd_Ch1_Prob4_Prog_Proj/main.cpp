@@ -35,8 +35,8 @@ int main(int argc, char** argv) {
     //Inputing the time with a random number and opening a file
     
     drpTime = rand() % 11 + 10; //[10,20] secs
-    const int SIZE = 21;
-    char fileNam [SIZE] = "DropDistance.dat";
+    short size = 21;
+    char fileNam [size] = "DropDistance.dat";
     out.open(fileNam);
             
     

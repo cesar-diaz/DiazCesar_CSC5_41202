@@ -12,10 +12,10 @@
 
 using namespace std;
 
-const double PAY_RATE = 16.78;
-const double SOC_SEC = 6 * .01;
-const double FED_TAX = 14 * .01;
-const double ST_TAX = 5 * .01;
+const float PAY_RATE = 16.78f;
+const float SOC_SEC = 6 * .01f;
+const float FED_TAX = 14 * .01f;
+const float ST_TAX = 5 * .01f;
 const unsigned short UNION = 10;
 const unsigned short THREE_MORE = 35;  
 
@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
     unsigned short hours;
     unsigned short depend;
     unsigned short overTim;
-    double grossPay;
+    float grossPay;
     
     //Input data
     cout << fixed << setprecision(2);
