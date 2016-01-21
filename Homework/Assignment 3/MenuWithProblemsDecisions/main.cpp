@@ -18,7 +18,7 @@ using namespace std;
 //User Libraries 
 
 //Global Constants
-const float PI=4*atan(1);
+const float PI = 4 * atan(1);
 
 //Function Prototypes 
 
@@ -41,13 +41,15 @@ int main(int argc, char** argv) {
         cout << "Type 4 to Display Problem Savitch 9th Ed Chap 3 Prob 5\n";
         cout << "Type 5 to Display Problem Savitch 9th Ed Chap 3 Prob 8\n";
         cout << "Type 6 to Display Problem Savitch 9th Ed Chap 3 Prob 6\n";
+        cout << "Type 7 to Display Problem Savitch 9th Ed Chap 3 Prob 7\n";
+        cout << "Type 8 to Display Problem Savitch 9th Ed Chap 3 Prob 10\n";
+        
         cout << "Type anything else to exit\n";
         cin >> nSolutn;
         
         //Solutions to all the problems
         switch (nSolutn){
             case 1:{
-                
                 //The Problem to Solve
                 cout << endl << "Solution to Savitch 8th Ed Chap 3 Prob 10\n";
                 cout << endl << "The Fibonacci Sequence\n" << endl;
@@ -93,6 +95,7 @@ int main(int argc, char** argv) {
                 break;
             }
             case 2:{
+                //The problem to solve
                 cout << endl << "Solution to Savitch 8th Ed Chap 3 Prob 11\n";
                 cout << endl << "The Finite sum for e^x\n" << endl;
 
@@ -126,6 +129,7 @@ int main(int argc, char** argv) {
                 break;
             }
             case 3:{
+                //The problem to solve
                 cout << endl << "Solution to Savitch 9th Ed Chap 3 Prob 1.\n";
                 cout << endl << "The Rock-Paper-Scissors Game.\n" << endl;
 
@@ -176,8 +180,7 @@ int main(int argc, char** argv) {
                 }while (toupper(questn) == 'Y');
                 break;
             }
-            case 4:{
-                
+            case 4:{   
             //The Problem to Solve
             cout << endl << "Solution to Savitch 9th Ed Chap 3 Prob 5 "
                     "Practice Programs\n";
@@ -228,8 +231,7 @@ int main(int argc, char** argv) {
             cout<< "The approx value of PI = " << apprxPI << endl << endl;
                 break;
             }
-            case 6:{
-                
+            case 6:{    
             //The Problem to Solve
             cout << endl << "Solution to Savitch 9th Ed Chap 3 Prob 6\n";
             cout << endl << "Buoyancy of a sphere.\n" << endl;
@@ -266,10 +268,104 @@ int main(int argc, char** argv) {
             }
                 break;
             }
-            case 7:{
+            case 7:{  
+            //The Problem to Solve
+            cout << endl << "Solution to Savitch 9th Ed Chap 3 Prob 7\n";
+            cout << endl << "Convert Celsius to Fahrenheit until equal\n" << endl;
+
+            //Declare and Initialize variables
+            int ctemp = 101;//Temperature to be input in celsius
+            float ftemp;//Temperature of celsius converted to fahrenheit
+            cout << fixed << setprecision(2); 
+
+            //Conversion from Celsius to Fahrenheit
+            do{
+                ctemp--;
+                ftemp = ((9 * static_cast<float>(ctemp)) / 5) + 32;
+            }while(ctemp != ftemp);
+
+            //Output the results
+            cout << "These two temperatures are equal when:\n";
+            cout << "Celsius = " << ctemp << endl;
+            cout << "Fahrenheit = " << ftemp << endl << endl;
                 break;
             }
             case 8:{
+            //The problem to solve
+            cout << endl << "Solution to Savitch 9thEd Chap3 Prob10" << endl;
+            cout << endl << "Candy Bars needed to maintain weight" << endl << endl;
+
+            //Declare and initialize variables
+            unsigned short int weight;
+            unsigned height;
+            unsigned short years;
+            char gender;
+            double bmr;
+            char activ;
+            float perc;//Percentage to increase based on activity level
+
+            //Input data
+            cout << "Enter your weight in pounds.\n";
+            cin >> weight;
+            cout << "Enter your height in inches.\n";
+            cin >> height;
+            cout << "Enter your age.\n";
+            cin >> years;
+            cout << "Are you male or female? M or F.\n";
+            cin >> gender;
+            cout << fixed << setprecision(2);
+
+            while (gender != 'M' && gender != 'F'){
+                cout << "Your entry was invalid.\n";
+                cout << "Please enter F for female and M "
+                        "for male.\n";
+                cin >> gender;
+            }
+
+            cout << "How is your activity level?\n";
+            do{
+            cout << "Enter 'S' for \"Sedentary\" 'SA' for \"Somewhat active\" "
+                    "'A' for \"Active\" and 'HA' for \"Highly Active\"\n";
+            cin >> activ;
+            }while (activ != 'S' && activ != 'SA' && activ != 'A' && activ != 'HA');
+
+            cout << fixed << setprecision(2);
+
+            switch (activ){
+                case 'S':{
+                    perc = .20;
+                }
+                    break;
+                case 'SA':{
+                    perc = .30;
+                }
+                    break;
+                case 'A':{
+                    perc = .40;
+                }
+                    break;
+                case 'HA':{
+                    perc = .50;
+                }
+                    break;
+            }
+
+            //Calculate or map inputs to outputs
+            switch (gender){
+                case 'F':
+                    bmr = 665 + (4.3 * weight) + (4.7 * height) - (4.7 * years);
+                    break;
+                case 'M':
+                    bmr = 66 + (6.3 * weight) + (12.9 * height) - 
+                    (6.8 * years);
+                    break;
+            }
+
+            //Output the results
+            cout << endl << "In order to maintain your bodyweight of\n";
+            cout << weight << " pounds by eating only candy bars,\n";
+            cout << "you would need to eat " << ((bmr * perc) + bmr) / 230 << " candy\n"
+                    "bars per day.\n" << endl;
                 break;
             }
             case 9:{
