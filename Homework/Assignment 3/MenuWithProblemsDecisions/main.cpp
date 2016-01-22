@@ -44,6 +44,7 @@ int main(int argc, char** argv) {
         cout << "Type 7 to Display Problem Savitch 9th Ed Chap 3 Prob 7\n";
         cout << "Type 8 to Display Problem Savitch 9th Ed Chap 3 Prob 10\n";
         cout << "Type 9 to Display Problem Savitch 9th Ed Chap 3 Prob 3\n";
+        cout << "Type 10 to Display Problem Savitch 9th Ed Chap 3 Prob 2\n";
         
         cout << "Type anything else to exit\n";
         cin >> nSolutn;
@@ -447,10 +448,56 @@ int main(int argc, char** argv) {
                 case 2: cout << "I";
                 case 1: cout << "I";
             }
-            cout << endl << endl9;
+            cout << endl << endl;
                 break;
             }
             case 10:{
+            //The Problem to Solve
+            cout << endl << "Solution to Savitch 9th Ed Chap 3 Prob 2\n";
+            cout << endl << "Calculate credit payments\n" << endl;
+
+                //Declare and initialize variables
+                float total, intrst, mPay;
+                float balance; 
+                cout << fixed << setprecision(2) << showpoint;
+
+                //Input the balance
+                cout << "Enter the balance of the account.\n";
+                cin >> balance;
+                cout << endl;
+
+                if( balance > 1000){   
+                    intrst = (balance - 1000.0f) * .01f + .015f * 1000.0f; 
+                    total = balance + intrst;
+                    if(total <= 10){
+                        mPay = total;
+                    }else{
+                        if(0.1 * total > 10){                 
+                            mPay = 0.1f * total;
+                        }else{
+                            mPay = 10.0f;
+                        }
+                    }
+                }else{
+                    intrst = balance * .015f;
+                    total = balance + intrst;
+                    if(total <= 10){
+                        mPay = total;
+                    }else{
+                        if(0.1f * total > 10){
+                            mPay = 0.1f * total;
+                        }else{
+                            mPay = 10.0f;
+                        }
+                    }
+                }
+
+                //Output the results
+                cout << "Initial balance = $" << balance << endl;
+                cout << "Total amount due = $" << total << endl;
+                cout << "Total interest due = $" << intrst << endl;
+                cout << "Minimum payment due = $" << mPay;
+                cout << endl << endl;
                 break;
             }
             default:{
