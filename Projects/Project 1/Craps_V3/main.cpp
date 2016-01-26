@@ -10,6 +10,7 @@
 #include <iostream>//I/O
 #include <cstdlib>//srand and rand function
 #include <ctime>//time to set the random number seed
+#include <fstream>
 
 using namespace std;
 
@@ -28,6 +29,10 @@ int main(int argc, char** argv) {
     //Declare and initialize variables
     //frequency of our dice throws
     unsigned short wins = 0, losses = 0, games;
+    ofstream out;
+    
+    //Open the file 
+    out.open ("Cardgame.dat");
     
     //Input data
     cout << "How many games of Craps would you like to play?" << endl;
@@ -71,7 +76,17 @@ int main(int argc, char** argv) {
     cout << "You lost " << 100.0f * losses / games << "% of games" << endl;
     cout << "Your wins and losses total: " << wins + losses << endl;
     
+    //Output the results to file
+    out << "Out of " << games << " played." << endl;
+    out << "You won " << wins << " games and " << endl;
+    out << "You lost " << losses << " games" << endl;
+    out << "Percentage wise" << endl;
+    out << "You won " << 100.0f * wins / games << "% of games" << endl;
+    out << "You lost " << 100.0f * losses / games << "% of games" << endl;
+    out << "Your wins and losses total: " << wins + losses << endl;
+    
     //Exit stage right
+    out.close();
 
     return 0;
 }
