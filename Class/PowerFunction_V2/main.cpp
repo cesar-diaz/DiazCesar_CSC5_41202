@@ -2,7 +2,7 @@
     File:   main.cpp
     Author: Cesar Diaz
     Created on January 4, 2016, 10:18 AM
-    Purpose: Power Function Example
+    Purpose: Power Function Example, using pass by reference
  */
 
 
@@ -19,14 +19,14 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes 
-int pow(int, int);
+int pow(int&, int&);
 
 //Execution Begins Here
 
 int main(int argc, char** argv) {
     
     //Variable to be used in timing
-    int begi, endi, begd, endd, loop = 200000000;//Beginning and ending of the integer vs. double 
+    int begi, endi, begd, endd, loop = 400000000;//Beginning and ending of the integer vs. double 
     
     //Declare and initialize variables
     int x;//Base of the problem
@@ -70,7 +70,7 @@ int main(int argc, char** argv) {
 //000000011111111112222222222333333333344444444445555555555666666666677777777778
 //345678901234567890123456789012345678901234567890123456789012345678901234567890
 /*                             Function Prototype                             */
-int pow(int a, int b){
+int pow(int &a, int &b){
     if (b<= 0) return 1;
     if (b == 1) return a;
     int abd2 = pow(a, b / 2);
