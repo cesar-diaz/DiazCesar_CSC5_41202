@@ -1,13 +1,14 @@
 /* 
     File:   main.cpp
     Author: Cesar Diaz
-    Created on January 28, 2016, 10:52 AM
-    Purpose: Convert an integer into words
+    Created on January 28, 2016, 1:10 PM
+    Purpose:
  */
 
 
 //system libraries
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -22,18 +23,39 @@ using namespace std;
 int main(int argc, char** argv) {
     
     //Declare and initialize variables
-    int num,n100s, n10s, n1s;
-    
+    string pfName, plName;//First and last name of the payee
+    string fName, lName;//First and last name of account holder
+    string date;
+    unsigned int amnt;
+    int n100s, n10s, n1s;
     
     //Input data
-    cout << "Enter the num:\n";
-    cin >> num;
-    n100s = (num - num % 100) / 100;//Number of 100s
-    num = (num - n100s * 100);//Subtract off 100s
-    n10s = (num - num % 10) / 10;//Number of 10s
-    n1s = (num - n10s * 10);//Subtract off 10s to get 1s
+    cout << "Check Writing Program\n";
+    cout << "Input the following 4 values\n";
+    cout << "Date:           ";
+    cin >> date;
+    cout << "Payee:          ";
+    cin >> pfName >> plName;
+    cout << "Amount:         $";
+    cin >> amnt;
+    cout << "Account Holder: ";
+    cin >> fName >> lName;
     
-    //Calculate or map inputs to outputs
+    //Output a Written Check
+    cout << endl;
+    cout << fName << " " << lName << endl;
+    cout << "STREET ADDRESS\n";
+    cout << "CITY, STATE ZIP" << setw(40) << "Date: " <<setw(10)<< date 
+            << endl << endl;
+    cout << "Pay to the Order of: " << pfName << " " << plName;
+    cout << setw(24) << "$" << amnt << ".00" << endl << endl;
+    
+    //Takes the amount and seperates it into 100s, 10s, and 1s
+    n100s = (amnt - amnt % 100) / 100;//Number of 100s
+    amnt = (amnt - n100s * 100);//Subtract off 100s
+    n10s = (amnt - amnt % 10) / 10;//Number of 10s
+    n1s = (amnt - n10s * 10);//Subtract off 10s to get 1s
+    //Convert the interger "amnt" into a word
     //Switch for the hundreds spot
     switch (n100s){
         case 0:
@@ -177,6 +199,9 @@ int main(int argc, char** argv) {
                 break;    
         }
     }
+    cout << " and no/100s Dollars" << endl << endl;
+    cout << "BANK OF CSC5" << endl << endl;
+    cout << "FOR: GOTTA PAY RENT" << setw(36) << fName << " " << lName << endl;
     
     //Output the results
     
