@@ -45,17 +45,17 @@ int main(int argc, char** argv) {
     cout << endl;
     cout << fName << " " << lName << endl;
     cout << "STREET ADDRESS\n";
-    cout << "CITY, STATE ZIP" << setw(40) << "Date: " <<setw(10)<< date 
+    cout << "CITY, STATE ZIP" << setw(40) << "Date: " << setw(9) << date 
             << endl << endl;
     cout << "Pay to the Order of: " << pfName << " " << plName;
     cout << setw(24) << "$" << amnt << ".00" << endl << endl;
     
-    //Takes the amount and seperates it into 100s, 10s, and 1s
+    //Takes the amount and separates it into 100s, 10s, and 1s
     n100s = (amnt - amnt % 100) / 100;//Number of 100s
     amnt = (amnt - n100s * 100);//Subtract off 100s
     n10s = (amnt - amnt % 10) / 10;//Number of 10s
     n1s = (amnt - n10s * 10);//Subtract off 10s to get 1s
-    //Convert the interger "amnt" into a word
+    //Convert the integer "amnt" into a word
     //Switch for the hundreds spot
     switch (n100s){
         case 0:
