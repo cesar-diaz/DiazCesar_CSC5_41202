@@ -27,18 +27,30 @@ int main(int argc, char** argv) {
     srand(static_cast<unsigned int>(time(0)));
     
     //Declare and initialize variables
+    //Player Cards
     unsigned short cardTot;
     char card1 = rand() % 13 + 1;
     char card2 = rand() % 13 + 1;
-    char card3;
-    char card4;
+    char card3 = rand() % 13 + 1;
+    char card4 = rand() % 13 + 1;
+    //Dealer Cards
+    unsigned short dCardTot;
+    char dCard1 = rand() % 13 + 1;
+    char dCard2 = rand() % 13 + 1;
+    char dCard3 = rand() % 13 + 1;
+    char dCard4 = rand() % 13 + 1;
     
-    //Output Initial Hand
+    //Output Initial Player Hand
     cout << static_cast<unsigned short>(card1) << endl;
     cout << static_cast<unsigned short>(card2) << endl;
     cardTot = card1 + card2;
     
-    //Does an Ace equal a 1 or 11
+    //OutPut Initial Dealer Hand
+    cout << static_cast<unsigned short>(dCard1) << endl;
+    cout << static_cast<unsigned short>(dCard2) << endl;
+    dCardTot = dCard1 + dCard2;
+    
+    //Does an Ace equal a 1 or 11(Player)
     if (card1 == 1){
         cout << "Would you like your Ace to be a (1/11)?\n";
         unsigned short answer;
