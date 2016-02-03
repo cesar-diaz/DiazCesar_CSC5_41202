@@ -39,8 +39,7 @@ int main(int argc, char** argv) {
     int money = 1000;
     unsigned int bet;
     //Hit or stick choices
-    char h, s;
-    char choice = 'h' || 's';
+    char choice;
     char answr;
     char dblBet;//double bet
     
@@ -218,7 +217,7 @@ int main(int argc, char** argv) {
    
     cout << "Total games played: " << count << endl;
     cout << "Your wallet total:  $" << money << endl;
-    cout << "Your wallet has also been printed to a .dat file\n";
+    cout << "Receipt of play has also been printed to a .dat file\n";
     
     //Exit stage right
 
