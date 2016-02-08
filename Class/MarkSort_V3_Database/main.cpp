@@ -16,42 +16,43 @@ using namespace std;
 //Global Constants
 
 //Function prototypes
-void fillAry(int [],int [],int);
-void prntAry(int [],int,int);
-void prntAry(int [],int [],int,int);
-void markSrt(int [],int [],int);
+void fillAry(int *, int *, int);
+void prntAry(int *, int, int);
+void prntAry(int *, int *, int, int);
+void markSrt(int *, int *, int);
 
 //Execution Begins Here
 int main(int argc, char** argv) {
+    
     //Initialize the seed
     srand(static_cast<unsigned int>(time(0)));
 
     //Declare variables
-    const int SIZE=100;
+    const int SIZE = 100;
     int array[SIZE];
     int index[SIZE];
     
     //Fill the array with random 2 digit numbers
-    fillAry(array,index,SIZE);
+    fillAry(array, index, SIZE);
     
     //Print the array
-    cout<<"Print the original array without the index"<<endl;
-    prntAry(array,SIZE,10);
-    cout<<"Print the original indexed array"<<endl;
-    prntAry(index,SIZE,10);
-    cout<<"Print the original array with the index"<<endl;
-    prntAry(array,index,SIZE,10);
+    cout << "Print the original array without the index" << endl;
+    prntAry(array, SIZE, 10);
+    cout << "Print the original indexed array" << endl;
+    prntAry(index, SIZE, 10);
+    cout << "Print the original array with the index" << endl;
+    prntAry(array, index, SIZE, 10);
     
     //Test finding the smallest element in the list
-    markSrt(array,index,SIZE);
+    markSrt(array, index, SIZE);
     
     //Print the array
-    cout<<"Print the array after sorting without the index"<<endl;
-    prntAry(array,SIZE,10);
-    cout<<"Print the indexed array after sorting"<<endl;
-    prntAry(index,SIZE,10);
-    cout<<"Print the original array with the index after sorting"<<endl;
-    prntAry(array,index,SIZE,10);
+    cout << "Print the array after sorting without the index" << endl;
+    prntAry(array, SIZE, 10);
+    cout << "Print the indexed array after sorting" << endl;
+    prntAry(index, SIZE, 10);
+    cout << "Print the original array with the index after sorting" << endl;
+    prntAry(array, index, SIZE, 10);
     
     //Exit stage right
     return 0;
@@ -66,18 +67,18 @@ int main(int argc, char** argv) {
 //Outputs:
 //  a->Sorted Array
 //******************************************************************************
-void markSrt(int a[],int indx[],int n){
+void markSrt(int *a, int *indx, int n){
     //Find smallest in each successive list
     //From the beginning of the list to the end
     //Outside Element of the list
-    for(int i=0;i<n-1;i++){
+    for(int i = 0; i < n - 1; i++){
         //Inside List above the Element
-        for(int j=i+1;j<n;j++){
+        for(int j = i + 1; j < n; j++){
             //Swap
-            if(a[indx[i]]>a[indx[j]]){
-                int temp =indx[j];
-                indx[j]=indx[i];
-                indx[i]=temp;
+            if(*(a + (*(indx + i))) > *(a + (* (indx + j)))){
+                int temp = *(indx + j);
+                *(indx +j) = *(indx + i);
+                *(indx + i) = temp;
             }
         }
     }
@@ -93,14 +94,14 @@ void markSrt(int a[],int indx[],int n){
 //Outputs:
 //  a->Printed List
 //******************************************************************************
-void prntAry(int a[],int indx[],int n,int perLine){
+void prntAry(int *a, int *indx, int n, int perLine){
     //Loop and fill the array with random numbers
-    cout<<endl;
-    for(int i=0;i<n;i++){
-        cout<<a[indx[i]]<<" ";
-        if(i%perLine==(perLine-1))cout<<endl;
+    cout << endl;
+    for(int i = 0; i < n; i++){
+        cout << *(a + (* (indx + i))) << " ";
+        if(i % perLine == (perLine - 1)) cout << endl;
     }
-    cout<<endl;
+    cout << endl;
 }
 
 //000000011111111112222222222333333333344444444445555555555666666666677777777778
@@ -113,14 +114,14 @@ void prntAry(int a[],int indx[],int n,int perLine){
 //Outputs:
 //  a->Printed List
 //******************************************************************************
-void prntAry(int a[],int n,int perLine){
+void prntAry(int *a, int n, int perLine){
     //Loop and fill the array with random numbers
-    cout<<endl;
-    for(int i=0;i<n;i++){
-        cout<<a[i]<<" ";
-        if(i%perLine==(perLine-1))cout<<endl;
+    cout << endl;
+    for(int i = 0; i < n; i++){
+        cout << *(a + i) << " ";
+        if(i % perLine == (perLine - 1)) cout << endl;
     }
-    cout<<endl;
+    cout << endl;
 }
 
 //000000011111111112222222222333333333344444444445555555555666666666677777777778
@@ -132,10 +133,10 @@ void prntAry(int a[],int n,int perLine){
 //Outputs:
 //  a->List initialized with random 2 digit numbers
 //******************************************************************************
-void fillAry(int a[],int indx[],int n){
+void fillAry(int *a, int *indx, int n){
     //Loop and fill the array with random numbers
-    for(int i=0;i<n;i++){
-        a[i]=rand()%90+10;//[10,99]
-        indx[i]=i;
+    for(int i = 0; i < n; i++){
+        *(a + i) = rand() % 90 + 10;//[10,99]
+        *(indx + i) = i;
     }
 }
