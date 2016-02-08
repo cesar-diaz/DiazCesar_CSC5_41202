@@ -19,11 +19,9 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes 
-void fillAry(int [], int);
-void prntAry(int [], int, int);
-void swap(int &, int &);
-void lstSml(int [], int, int);
-void markSrt(int [], int);
+void fillAry(int *, int);
+void prntAry(int *, int, int);
+void markSrt(int *, int);
 
 //Execution Begins Here
 
@@ -61,7 +59,7 @@ int main(int argc, char** argv) {
 //Outputs:
 //a->Sorted Array
 /******************************************************************************/
-void markSrt(int a[], int n){
+void markSrt(int *a, int n){
     //Find smallest in each successive list
     //From the beginning of the list to the end
     //Outside Element of the list
@@ -69,10 +67,10 @@ void markSrt(int a[], int n){
         //Inside list above the Element
         for (int j = i + 1; j < n; j++){
             //Swap
-            if (a[i] > a[j]){
-                int temp = a[j];
-                a[j] = a[i];//Exclusive or XOR
-                a[i] = temp;//Exclusive or XOR b = a
+            if (*(a + i) > *(a + j)){
+                int temp = *(a + j);
+                *(a + j) = *(a + i);//Exclusive or XOR
+                *(a+ i) = temp;//Exclusive or XOR b = a
             }
         }   
     }
@@ -88,11 +86,11 @@ void markSrt(int a[], int n){
 //Outputs:
 //a->Printed list
 /******************************************************************************/
-void prntAry(int a[], int n, int perLine){
+void prntAry(int *a, int n, int perLine){
     //Loop and fill the array w/ random numbers
     cout << endl;
     for (int i = 0; i < n; i++){
-        cout << a[i] << " ";
+        cout << *(a + i) << " ";
         if (i % perLine == (perLine - 1)){
             cout << endl;
         }
@@ -109,10 +107,10 @@ void prntAry(int a[], int n, int perLine){
 //Outputs:
 //a->List initialized w/random numbers
 /******************************************************************************/
-void fillAry(int a[], int n){
+void fillAry(int *a, int n){
     //Loop and fill the array w/ random numbers
     for (int i = 0; i < n; i++){
-        a[i] = rand() % 90 + 10;//[10,99]
+        *(a+ i) = rand() % 90 + 10;//[10,99]
     }
 }
 
