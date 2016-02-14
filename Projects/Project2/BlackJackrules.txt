@@ -1,0 +1,16 @@
+BLACKJACK RULES
+***************
+Playing Blackjack is very simple and
+easy to understand. The main objective 
+of the game is to rech a total card
+value of 21. All the cards are worth the 
+number that is written of their face. 
+The only exeptions to this are,
+aces(worth either 1 or 11), 
+jacks, queens, and kings(all worth 10).
+You are initlally dealt 2 cards by the dealer
+and then you may choose to either "hit" or 
+"stick" which is just asking the dealer for 
+another card. If your total card value is over
+21 that is known as a "bust" or in other words,
+you just lost the game.

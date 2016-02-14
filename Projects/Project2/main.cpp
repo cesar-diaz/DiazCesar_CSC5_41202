@@ -10,6 +10,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include <fstream>
 
 using namespace std;
 
@@ -44,8 +45,36 @@ void scoreBrd(const int pHand[], const int dHand[]);
 
 int main(int argc, char** argv) {
     
-    //Game of BlackJack
-    playHand();
+    //Promt player for rules or game
+    string rules;
+    cout << "Welcome to this c++ interpretation of the game of BlackJack.\n";
+    cout << "Would you like to see the rules or play the game?\n";
+    cout << "Type\n";
+    cout << "Rules or Game\n";
+    cin >> rules;
+    while(rules != "Rules" && rules != "Game"){
+        cout << "Your choice was invlaid. Please enter "
+                "either \"Rules\" or \"Game\"" << endl;
+        cin >> rules;
+    }
+    
+    if(rules == "Rules"){
+        //rules from .txt go here
+        string line;
+        ifstream myfile ("blackjackrules.txt");
+        if (myfile.is_open()){
+            while ( getline (myfile,line)){
+                cout << line << '\n';
+            }myfile.close();
+            cout << endl;
+            playHand();
+        } else cout << "Unable to open file"; 
+    }else if(rules == "Game"){
+        //Game of BlackJack
+        playHand();
+    }
+    
+    
     
     //Exit stage right
 
